@@ -1,11 +1,11 @@
 
 using System;
 
-public class Doctor : Staff
+public class Doctor : Staff //inherits from Staff class
 {
-    public string Specialization { get; set; }
+    public string Specialization { get; set; } // Additional property for Doctor
 
-    public Doctor(string name, int staffId,
+     public Doctor(string name, int staffId, // Constructor for Doctor class
                   string department, string specialization)
         : base(name, staffId, department)
     {
@@ -17,7 +17,7 @@ public class Doctor : Staff
         Console.WriteLine("Doctor is checking patients.");
     }
 
-    public void DisplayDoctor()
+    public void DisplayDoctor()  // Method to display doctor information , polymorphism
     {
         DisplayInfo();
         Console.WriteLine("Specialization: " + Specialization);

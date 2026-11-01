@@ -7,8 +7,9 @@ class Program
 {
     static void Main()
     {
-        List<Staff> staffList = new List<Staff>(); //List to store all staff members (data structure)
-
+      //  List<Staff> staffList = new List<Staff>(); //List to store all staff members (data structure)
+StaffManager manager = new StaffManager();
+List<Staff> staffList = manager.staffList;  // I have created an instance of StaffManager class and then I have accessed the staffList property of that instance to get the list of staff members. This way, I can use the same staffList that is managed by the StaffManager class, which allows for better organization and management of staff data.
         while (true)
         {
             Console.WriteLine("\n================================");
@@ -120,6 +121,7 @@ class Program
                     }
                 }
             }
+            /*
             else if (choice == "5")
             {
                 Console.WriteLine("Search Staff feature will be added next.");
@@ -128,6 +130,34 @@ class Program
             {
                 Console.WriteLine("Invalid Choice!");
             }
+            */
+            // I have added the search function for staff members based on their ID. The user can enter the staff ID, and the program will check if a staff member with that ID exists in the list. If found, it will display "Staff Found!", otherwise it will display "Staff Not Found!". If the user enters an invalid ID (non-integer), it will display "Invalid Staff ID!".
+else if (choice == "5")
+{
+    Console.Write("Enter Staff ID to search: ");
+
+    int id;
+
+    if (int.TryParse(Console.ReadLine(), out id))
+    {
+        bool found = manager.SearchStaff(id);
+
+        if (found == true)
+        {
+            Console.WriteLine("Staff Found!");
+        }
+        else
+        {
+            Console.WriteLine("Staff Not Found!");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Invalid Staff ID!");
+    }
+}
+
         }
     }
 }
+
