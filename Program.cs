@@ -151,13 +151,16 @@ else if (choice == "5")
             Console.WriteLine("Staff Not Found!");
         }
     }
-    else
-    {
-        Console.WriteLine("Invalid Staff ID!");
-    }
+   else
+{
+    Console.WriteLine("Invalid Staff ID!");
+}
+}
+else
+{
+    Console.WriteLine("Invalid Choice! Please try again.");
 }
 
         }
     }
 }
-
